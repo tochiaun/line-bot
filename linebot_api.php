@@ -21,7 +21,9 @@ foreach ($request_json['events'] as $event)
 			if($text == "@บอท สวัสดี"){
 					$reply_message = "สวัสดี ยินดีให้บริการ";
 				}
-			
+			if($text == "@บอท แจ้งเครื่องเสีย"){
+					$reply_message = "สวัสดี รับทราบ กรุณารอักครู่ ประสานทีมงานพื่อดำเนินการ";
+				}
 			
 		} else {
 			$reply_message = 'ฉันได้รับ ' . $event['message']['type'] . ' ของคุณแล้ว!';
