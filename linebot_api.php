@@ -22,7 +22,10 @@ foreach ($request_json['events'] as $event)
 					$reply_message = "สวัสดี ยินดีให้บริการ";
 				}
 			if($text == "@บอท แจ้งเครื่องเสีย"){
-					$reply_message = "สวัสดี รับทราบ กรุณารอสักครู่ ประสานทีมงานพื่อดำเนินการและแจ้ง JOB NO.";
+					$reply_message = "สวัสดี รับทราบ กรุณารอสักครู่ ประสานทีมงานเพื่อดำเนินการและแจ้ง JOB NO.";
+				}
+			if($text == "@บอท โควิควันนี้"){
+					$reply_message = "https://covid19.th-stat.com/api/open/today";
 				}
 			
 		} else {
