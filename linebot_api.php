@@ -22,31 +22,6 @@ foreach ($request_json['events'] as $event)
 					$reply_message = "สวัสดี ยินดีให้บริการ";
 				}
 			
-			if($txts[0] == "@บอท"){
-				
-				$reply_message = "กรุณาใช้รูปแบบคำสั่งที่ถูกต้องงงงง!!\n";
-				
-				$reply_message .= "ฉันมีบริการให้คุณสั่งได้ ดังนี้...\n";
-				
-				$reply_message .= "พิมพ์ว่า \"@บอท ขอรายชื่อนิสิตทั้งหมด\"\n";
-				$reply_message .= "พิมพ์ว่า \"@บอท ขอรายชื่อนิสิต รหัส 61160xxx\"\n";
-				$reply_message .= "พิมพ์ว่า \"@บอท ขอรหัส FTP ของ s61160xxx\"\r\n";
-				
-				
-				
-				if($txts[1] == "ขอรายชื่อนิสิตทั้งหมด"){
-					$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php');
-				}
-			
-				if($txts[1]." ".$txts[2] == "ขอรายชื่อนิสิต รหัส"){
-					$reply_message = mySQL_selectAll('http://bot.kantit.com/json_select_users.php?sid='.$txts[3]);
-				}
-				
-				if($txts[1]." ".$txts[2]." ".$txts[3] == "ขอรหัส FTP ของ"){
-					$reply_message = mySQL_selectFTP('http://bot.kantit.com/json_select_ftp.php?sid='.$txts[4]);					
-				}
-				
-			}
 			
 		} else {
 			$reply_message = 'ฉันได้รับ ' . $event['message']['type'] . ' ของคุณแล้ว!';
